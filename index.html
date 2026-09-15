@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Run</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="game">
+
+    <!-- HUD -->
+    <div class="hud">
+        <div>🏆 <span id="score">0</span></div>
+        <div>🪙 <span id="coins">0</span></div>
+        <div>❤️ <span id="lives">3</span></div>
+    </div>
+
+    <div class="speed">
+        SPEED <span id="speed">1</span>
+    </div>
+
+    <!-- DUNIA GAME -->
+    <div id="world">
+
+        <div class="sky"></div>
+
+        <div class="moon">🌙</div>
+
+        <div class="cloud cloud1">☁️</div>
+        <div class="cloud cloud2">☁️</div>
+
+        <!-- Jalan -->
+        <div class="road">
+
+            <div class="road-line line1"></div>
+            <div class="road-line line2"></div>
+
+        </div>
+
+        <!-- Objek -->
+        <div id="objects"></div>
+
+        <!-- KARAKTER -->
+        <div id="player">
+
+            <div class="hair"></div>
+
+            <div class="head">
+                <div class="eye left-eye"></div>
+                <div class="eye right-eye"></div>
+            </div>
+
+            <div class="body">
+                <div class="shirt"></div>
+            </div>
+
+            <div class="arm left-arm"></div>
+            <div class="arm right-arm"></div>
+
+            <div class="leg left-leg"></div>
+            <div class="leg right-leg"></div>
+
+            <div class="chakra"></div>
+
+        </div>
+
+    </div>
+
+    <!-- TOMBOL -->
+    <div class="controls">
+
+        <button id="leftBtn">◀</button>
+
+        <button id="jumpBtn">⬆</button>
+
+        <button id="rightBtn">▶</button>
+
+    </div>
+
+
+    <!-- START -->
+    <div id="startScreen" class="screen">
+
+        <div class="ninja-logo">🥷</div>
+
+        <h1>NINJA RUN</h1>
+
+        <p>RUN • JUMP • SURVIVE</p>
+
+        <p class="instruction">
+            Hindari rintangan dan kumpulkan koin
+        </p>
+
+        <button id="startBtn">
+            START GAME
+        </button>
+
+    </div>
+
+
+    <!-- GAME OVER -->
+    <div id="gameOver" class="screen hidden">
+
+        <div class="ninja-logo">💀</div>
+
+        <h1>GAME OVER</h1>
+
+        <p>Score kamu</p>
+
+        <h2 id="finalScore">0</h2>
+
+        <p>🪙 <span id="finalCoins">0</span></p>
+
+        <button id="restartBtn">
+            PLAY AGAIN
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
