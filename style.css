@@ -1,0 +1,708 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    overflow: hidden;
+    background: #050509;
+    font-family: Arial, sans-serif;
+}
+
+#game {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* =====================
+   SKY
+===================== */
+
+#world {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.sky {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #070716,
+            #171744 45%,
+            #321e49 70%,
+            #07070b
+        );
+}
+
+.moon {
+    position: absolute;
+
+    top: 9%;
+    right: 12%;
+
+    font-size: 55px;
+
+    filter:
+        drop-shadow(0 0 20px white);
+}
+
+
+/* =====================
+   CLOUD
+===================== */
+
+.cloud {
+    position: absolute;
+
+    font-size: 50px;
+
+    opacity: .35;
+
+    animation: cloudMove 20s linear infinite;
+}
+
+.cloud1 {
+    top: 18%;
+    left: -100px;
+}
+
+.cloud2 {
+    top: 32%;
+    left: -250px;
+
+    animation-delay: 8s;
+}
+
+@keyframes cloudMove {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(120vw);
+    }
+}
+
+
+/* =====================
+   ROAD
+===================== */
+
+.road {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -10%;
+
+    transform: translateX(-50%);
+
+    width: 700px;
+    height: 110%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #09090c,
+            #17171c,
+            #09090c
+        );
+
+    clip-path:
+        polygon(
+            38% 0,
+            62% 0,
+            100% 100%,
+            0 100%
+        );
+}
+
+
+/* garis jalan */
+
+.road-line {
+
+    position: absolute;
+
+    width: 7px;
+    height: 100%;
+
+    opacity: .6;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #777 0px,
+            #777 50px,
+            transparent 50px,
+            transparent 100px
+        );
+}
+
+.line1 {
+    left: 33%;
+}
+
+.line2 {
+    left: 67%;
+}
+
+
+/* =====================
+   PLAYER
+===================== */
+
+#player {
+
+    position: absolute;
+
+    width: 70px;
+    height: 115px;
+
+    left: 50%;
+    bottom: 20%;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+
+    transition:
+        left .15s ease;
+}
+
+
+/* rambut */
+
+.hair {
+
+    position: absolute;
+
+    top: 0;
+    left: 8px;
+
+    width: 54px;
+    height: 35px;
+
+    background: #050507;
+
+    border-radius:
+        50% 50% 20% 20%;
+
+    transform:
+        rotate(-8deg);
+
+    z-index: 5;
+}
+
+
+/* kepala */
+
+.head {
+
+    position: absolute;
+
+    top: 13px;
+    left: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    background: #c88768;
+
+    border-radius: 50%;
+
+    border: 3px solid #050505;
+
+    z-index: 3;
+}
+
+
+/* mata */
+
+.eye {
+
+    position: absolute;
+
+    top: 18px;
+
+    width: 7px;
+    height: 7px;
+
+    background: #111;
+
+    border-radius: 50%;
+}
+
+.left-eye {
+    left: 8px;
+}
+
+.right-eye {
+    right: 8px;
+}
+
+
+/* badan */
+
+.body {
+
+    position: absolute;
+
+    top: 50px;
+    left: 17px;
+
+    width: 36px;
+    height: 42px;
+
+    background: #17171d;
+
+    border: 3px solid #050505;
+
+    border-radius: 8px;
+}
+
+
+/* baju */
+
+.shirt {
+
+    position: absolute;
+
+    top: 7px;
+    left: 6px;
+
+    width: 18px;
+    height: 25px;
+
+    border-left: 3px solid #666;
+}
+
+
+/* tangan */
+
+.arm {
+
+    position: absolute;
+
+    top: 53px;
+
+    width: 12px;
+    height: 38px;
+
+    background: #202027;
+
+    border-radius: 10px;
+}
+
+.left-arm {
+
+    left: 5px;
+
+    transform:
+        rotate(20deg);
+}
+
+.right-arm {
+
+    right: 5px;
+
+    transform:
+        rotate(-20deg);
+}
+
+
+/* kaki */
+
+.leg {
+
+    position: absolute;
+
+    top: 87px;
+
+    width: 13px;
+    height: 30px;
+
+    background: #111118;
+
+    border-radius: 8px;
+}
+
+.left-leg {
+    left: 19px;
+}
+
+.right-leg {
+    right: 19px;
+}
+
+
+/* chakra */
+
+.chakra {
+
+    position: absolute;
+
+    left: -8px;
+    top: 25px;
+
+    width: 85px;
+    height: 85px;
+
+    border-radius: 50%;
+
+    border: 3px solid #704cff;
+
+    opacity: .3;
+
+    animation:
+        chakraSpin 1s linear infinite;
+}
+
+@keyframes chakraSpin {
+
+    from {
+        transform:
+            rotate(0deg)
+            scale(.8);
+    }
+
+    to {
+        transform:
+            rotate(360deg)
+            scale(1.1);
+    }
+}
+
+
+/* =====================
+   OBJECT
+===================== */
+
+.object {
+
+    position: absolute;
+
+    z-index: 15;
+
+    font-size: 42px;
+
+    transform:
+        translateX(-50%);
+}
+
+.coin {
+
+    filter:
+        drop-shadow(0 0 10px gold);
+
+    animation:
+        coinSpin .5s linear infinite;
+}
+
+@keyframes coinSpin {
+
+    50% {
+        transform:
+            translateX(-50%)
+            scaleX(.2);
+    }
+}
+
+.obstacle {
+
+    filter:
+        drop-shadow(0 0 7px red);
+}
+
+
+/* =====================
+   HUD
+===================== */
+
+.hud {
+
+    position: absolute;
+
+    z-index: 100;
+
+    top: 15px;
+    left: 15px;
+    right: 15px;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    color: white;
+
+    font-size: 19px;
+
+    font-weight: bold;
+}
+
+.speed {
+
+    position: absolute;
+
+    z-index: 100;
+
+    top: 48px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    color: #9b8cff;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* =====================
+   BUTTON
+===================== */
+
+.controls {
+
+    position: absolute;
+
+    z-index: 100;
+
+    bottom: 25px;
+
+    left: 0;
+    right: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 22px;
+}
+
+.controls button {
+
+    width: 72px;
+    height: 72px;
+
+    border-radius: 50%;
+
+    border: 2px solid
+        rgba(255,255,255,.35);
+
+    background:
+        rgba(20,20,35,.85);
+
+    color: white;
+
+    font-size: 29px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,.5);
+
+    touch-action: manipulation;
+}
+
+.controls button:active {
+
+    transform:
+        scale(.82);
+
+    background:
+        rgba(100,70,255,.7);
+}
+
+
+/* =====================
+   SCREEN
+===================== */
+
+.screen {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 200;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        rgba(4,4,12,.88);
+}
+
+.screen h1 {
+
+    font-size: 43px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+}
+
+.screen p {
+
+    margin: 6px;
+}
+
+.instruction {
+
+    font-size: 13px;
+
+    opacity: .6;
+}
+
+.ninja-logo {
+
+    font-size: 70px;
+
+    margin-bottom: 10px;
+}
+
+.screen button {
+
+    margin-top: 25px;
+
+    padding:
+        15px 38px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6d4cff,
+            #a855f7
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 0 25px
+        rgba(109,76,255,.5);
+}
+
+.screen h2 {
+
+    font-size: 45px;
+
+    margin: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* =====================
+   HIT
+===================== */
+
+.hit {
+
+    animation:
+        hitAnimation .4s ease;
+}
+
+@keyframes hitAnimation {
+
+    25% {
+        transform:
+            translateX(-50%)
+            rotate(-15deg);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            rotate(15deg);
+    }
+
+    75% {
+        transform:
+            translateX(-50%)
+            rotate(-10deg);
+    }
+}
+
+
+/* =====================
+   JUMP
+===================== */
+
+.jump {
+
+    animation:
+        jumpAnimation .6s ease;
+}
+
+@keyframes jumpAnimation {
+
+    50% {
+        bottom: 40%;
+    }
+}
+
+
+/* =====================
+   MOBILE
+===================== */
+
+@media(max-width:600px) {
+
+    .road {
+        width: 125vw;
+    }
+
+    .controls {
+        bottom: 20px;
+        gap: 17px;
+    }
+
+    .controls button {
+        width: 68px;
+        height: 68px;
+    }
+
+    .screen h1 {
+        font-size: 35px;
+    }
+}
